@@ -1,5 +1,4 @@
 const express = require('express');
-// const { DataTypes } = require('sequelize/types');
 const helpers = require('../helpers/help')
 const models = require('../models');
 const bcrypt = require('bcryptjs');
