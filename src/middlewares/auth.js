@@ -28,7 +28,7 @@ exports.verifyAccess = (req, res, next) =>{
     console.log('isi decode', decoded.id)
     req.userId = decoded.id
     req.email = decoded.email
-    req.roleId = decoded.roleId
+    req.role = decoded.role
     next()
   })
 }

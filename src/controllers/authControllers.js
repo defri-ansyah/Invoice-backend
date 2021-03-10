@@ -32,7 +32,7 @@ const createUser = (req, res) => {
               username,
               email,
               password: hash,
-              role_id: 2
+              role: 2
             })
               .then((user) => {
                 if (user) {
@@ -87,7 +87,7 @@ const login = (req, res) => {
         })
       } else {
         users.password = undefined
-        jwt.sign({ id: users.id, email: users.email, roleId: users.role_id }, process.env.SECRET_KEY, { expiresIn: '24h' }, function (err, token) {
+        jwt.sign({ id: users.id, email: users.email, role: users.role }, process.env.SECRET_KEY, { expiresIn: '24h' }, function (err, token) {
           res.status(200).json({
             'status': 'OK',
             'messages': 'User berhasil login',
