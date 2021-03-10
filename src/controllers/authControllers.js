@@ -15,7 +15,7 @@ const getAllUser = async (req, res) => {
 };
 
 const createUser = (req, res) => {
-  const { username, email, password } = req.body
+  const { username, email, password, role } = req.body
   models.users.findOne({
     where: {
       email: email
@@ -32,7 +32,7 @@ const createUser = (req, res) => {
               username,
               email,
               password: hash,
-              role: 2
+              role
             })
               .then((user) => {
                 if (user) {

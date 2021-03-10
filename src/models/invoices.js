@@ -11,12 +11,20 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.invoices.hasMany(models.invoice_details, {
+        foreignKey: 'invoice_id'
+      })
+      models.invoices.hasOne(models.users, {
+        foreignKey: 'id',
+        sourceKey: 'customer_id'
+      })
     }
   };
   invoices.init({
     invoice_code: DataTypes.STRING,
     customer_id: DataTypes.INTEGER,
-    total_amount: DataTypes.INTEGER
+    sub_total: DataTypes.FLOAT,
+    total_amount: DataTypes.FLOAT
   }, {
     sequelize,
     modelName: 'invoices',

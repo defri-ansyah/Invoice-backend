@@ -11,13 +11,20 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.invoice_details.belongsTo(models.invoices, {
+        foreignKey: 'invoice_id'
+      })
+      models.invoice_details.hasOne(models.items, {
+        foreignKey: 'id',
+        sourceKey: 'item_id'
+      })
     }
   };
   invoice_details.init({
     invoice_id: DataTypes.INTEGER,
     item_id: DataTypes.INTEGER,
     qty: DataTypes.INTEGER,
-    amount: DataTypes.INTEGER
+    amount: DataTypes.FLOAT
   }, {
     sequelize,
     modelName: 'invoice_details',

@@ -14,8 +14,11 @@ module.exports = {
       customer_id: {
         type: Sequelize.INTEGER
       },
+      sub_total: {
+        type: Sequelize.FLOAT
+      },
       total_amount: {
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT
       },
       createdAt: {
         allowNull: false,
