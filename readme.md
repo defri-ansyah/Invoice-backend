@@ -64,54 +64,18 @@ $ npm run dev
 | 4   | POST        | /api/auth/forgot-password/new-password/:token | Forgot password                            |
 | 5   | PATCH       | /api/auth/edit-password                       | Edit password from profile user            |
 
-### User Endpoint
+### Invoice Endpoint
 | No  | HTTP Method | URI                              | Operation                                  |
 | --- | ----------- | -------------------------------- | ------------------------------------------ |
-| 1   | PATCH       | /api/user/edit-profile           | Edit profile user                          |
-| 2   | PATCH       | /api/user/update-image           | update image user                          |
-| 3   | DELETE      | /api/user/delete-image           | Delete image user                          |
-| 4   | GET         | /api/user/detail                 | Get detail user                            |
-| 5   | GET         | /api/user/my booking             | Get all booking user                       |
-
-### Ticketing Endpoint
-| No  | HTTP Method | URI                                     | Operation                                 |
-| --- | ----------- | --------------------------------------- | ----------------------------------------- |
-| 1   | GET         | /api/ticketing/find                     | Get find ticket                           |
-| 2   | POST        | /api/ticketing/select-ticket            | Select ticket by flight route id for order|
-| 3   | GET         | /api/ticketing/detail/:order_id         | Get order detail by order id & userid     |
-| 4   | PATCH       | /api/ticketing/input-flight-detail      | Input flight detail by order id           |
-| 5   | GET         | /api/ticketing/amount-completed-payment | Get total completed payment on admin      |
-
-### Data look-up Endpoint
-| No  | HTTP Method | URI                    | Operation               |
-| --- | ----------- | ---------------------- | ----------------------- |
-| 1   | GET         | /api/data-lookup/city  | Get city on find ticket |
-
-### Airlines Endpoint
-| No  | HTTP Method | URI                               | Operation                     |
-| --- | ----------- | --------------------------------- | ----------------------------- |
-| 1   | POST        | /api/airlines/insert-airlines     | Add new airlines on admin     |
-| 2   | DELETE      | /api/airlines/delete/:id          | Delete airlines on admin      |
-| 3   | GET         | /api/airlines                     | Get all airlines on admin     |
-| 4   | PATCH       | /api/airlines/update-airlines/:id | Update name airlines on admin |
-| 5   | GET         | /api/airlines/get-by-id/:id       | Get airlines by id on admin   |
-| 6   | GET         | /api/airlines/amount              | Get total airlines on admin   |
-| 7   | POST        | /api/airlines/search              | Search airlines on admin      |
-| 8   | PATCH       | /api/airlines/update-logo/:id     | Update logo airlines on admin |
-
-### Airlines Endpoint
-| No  | HTTP Method | URI                               | Operation                       |
-| --- | ----------- | --------------------------------- | ------------------------------- |
-| 1   | POST        | /api/flightroute/insert-route     | Insert flighroutes on admin     |
-| 2   | DELETE      | /api/flighroute/delete/:id        | Delete flightroutes on admin    |
-| 3   | GET         | /api/flighroute                   | Get all flightroutes on admin   |
-| 4   | PATCH       | /api/flightroute/update/:id       | Update flightroutes on admin    |
-| 5   | GET         | /api/flightroute/get-by-id/:id    | Get flightroutes by id on admin |
-| 6   | GET         | /api/flightroute/amount           | Get total flightroutes on admin |
-| 7   | POST        | /api/flightroute/search           | Search flightroutes on admin    |
+| 1   | POST        | /api/invoice                     | Create Invoice                             |
+| 2   | PATCH       | /api/invoice/edit                | update Invoice                             |
+| 3   | DELETE      | /api/invoice/:id                 | Delete Invoice                             |
+| 4   | GET         | /api/invoice/                    | Get all invoice                            |
+| 5   | GET         | /api/invoice/:id                 | Get detail invoice                         |
+| 6   | GET         | /api/invoice/report              | Get invoice report                         |
 
 ## About Project
-This App for manage invoice
+Website Application for manage invoice
 
 ## Contributing
 
