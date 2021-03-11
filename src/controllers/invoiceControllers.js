@@ -4,6 +4,15 @@ const moment = require('moment');
 
 const createInvoice = async (req, res) => {
   const { items, customer_id } = req.body;
+  const {role} = req
+  const roles = ['staff']
+  if (!roles.includes(role)) {
+    res.status(500).json({
+      'status': 'unauthorized',
+      'messages': 'unauthorized',
+      'data': null,
+    })
+  } else {
   let sub_total = 0;
   for (const [i, item] of items.entries()) {
     const itemsModel = await models.items.findOne({
@@ -56,6 +65,7 @@ const createInvoice = async (req, res) => {
         'data': null,
       })
     })
+  }
 }
 
 const getAllInvoice = async (req, res) => {
@@ -91,6 +101,15 @@ const getAllInvoice = async (req, res) => {
 
 const getInvoice = async (req, res) => {
   const { id } = req.params
+  const {role} = req
+  const roles = ['staff', 'lead', 'director']
+  if (!roles.includes(role)) {
+    res.status(500).json({
+      'status': 'unauthorized',
+      'messages': 'unauthorized',
+      'data': null,
+    })
+  } else {
   models.invoices.findOne({
     include: [{
       model: models.invoice_details,
@@ -128,11 +147,20 @@ const getInvoice = async (req, res) => {
         'data': null,
       })
     })
+  }
 }
 
 const updateInvoice = async (req, res) => {
   const { invoice_id, items, customer_id } = req.body;
-  console.log(invoice_id);
+  const {role} = req
+  const roles = ['staff', 'lead']
+  if (!roles.includes(role)) {
+    res.status(500).json({
+      'status': 'unauthorized',
+      'messages': 'unauthorized',
+      'data': null,
+    })
+  } else {
   let sub_total = 0;
   for (const [i, item] of items.entries()) {
     const itemsModel = await models.items.findOne({
@@ -194,9 +222,19 @@ const updateInvoice = async (req, res) => {
         'data': null,
       })
     })
+  }
 }
 
 const getReportInvoice = async (req, res) => {
+  const {role} = req
+  const roles = ['director']
+  if (!roles.includes(role)) {
+    res.status(401).json({
+      'status': 'unauthorized',
+      'messages': 'unauthorized',
+      'data': null,
+    })
+  } else {
   models.users.findAll({
     where: {
       role: 'customer'
@@ -241,10 +279,20 @@ const getReportInvoice = async (req, res) => {
         'data': null,
       })
     })
+  }
 }
 
 const deleteInvoice = async (req, res) => {
   const { id } = req.params
+  const {role} = req
+  const roles = ['lead']
+  if (!roles.includes(role)) {
+    res.status(500).json({
+      'status': 'unauthorized',
+      'messages': 'unauthorized',
+      'data': null,
+    })
+  } else {
   models.invoice_details.destroy({
     where: {
       invoice_id: id
@@ -277,5 +325,6 @@ const deleteInvoice = async (req, res) => {
         'data': null,
       })
     })
+  }
 }
 module.exports = { createInvoice, getAllInvoice, getInvoice, updateInvoice, getReportInvoice, deleteInvoice }
