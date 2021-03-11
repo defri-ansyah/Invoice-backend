@@ -1,10 +1,10 @@
-<h1 align="center">Ankasa Ticketing</h1>
+<h1 align="center">INVOICE</h1>
 
 [![Node JS](https://img.shields.io/badge/Dependencies-Express%20JS-green)](https://nodejs.org/en/)
-![GitHub repo size](https://img.shields.io/github/repo-size/defri-ansyah/Ankasa-API)
-![GitHub contributors](https://img.shields.io/github/contributors/defri-ansyah/Ankasa-API)
-![GitHub stars](https://img.shields.io/github/stars/defri-ansyah/Ankasa-API)
-![GitHub forks](https://img.shields.io/github/forks/defri-ansyah/Ankasa-API)
+![GitHub repo size](https://img.shields.io/github/repo-size/defri-ansyah/Invoice-backend)
+![GitHub contributors](https://img.shields.io/github/contributors/defri-ansyah/Invoice-backend)
+![GitHub stars](https://img.shields.io/github/stars/defri-ansyah/Invoice-backend)
+![GitHub forks](https://img.shields.io/github/forks/defri-ansyah/Invoice-backend)
 
 <p align="center">
   <a href="https://nodejs.org/" target="blank">
@@ -21,7 +21,6 @@
 * [API Endpoint](#API-Endpoint)
 * [About Project](#About-Project)
 * [Related Project](#Related-Project)
-* [Contributing](#Contributing)
 * [Contact](#Contact)
 
 ## Prerequiste
@@ -29,37 +28,31 @@
 - MySQL - Download and Install [MySQL](https://www.mysql.com/downloads/)
 - Express.js - Download and Install [Express.js](https://expressjs.com/)
 - Sequelize.js - Download and Install [Sequelize.js](https://sequelize.org/)
-- Midtrans - Download and Install [Midtrans](https://midtrans.com/)
-- Node-cron - Download and Install [Node-cron](https://www.npmjs.com/package/node-cron)
 
 ## Installation
 ### Clone
 ```
-$ git clone https://github.com/defri-ansyah/Ankasa-API.git
-$ cd Ankasa-API
+$ git clone https://github.com/defri-ansyah/Invoice-backend.git
+$ cd Invoice-backend
 $ npm install
 ```
 
 ## Create Environment Variable
 
 ```
-DB_HOST=YOUR_DB_HOST
-DB_USER=YOUR_DB_USER
-DB_PASSWORD=YOUR_DB_PASSWORD
-DB_NAME=YOUR_TABLE_NAME
-PORT=YOUR_PORT
-SECRET_KEY = YOUR_SECRET_KEY
-URL_EMAIL_CONFIRM = YOUR_EMAIL_VALIDATION_PAGE_FRONTEND
-EMAIL = YOUR_EMAIL_CONFIRMATION
-PASSWORD = YOUR_EMAIL_PASSWORD
+PORT = YOUR_PORT
+BASE_URL = YOUR_BASE_URL
+SECRET_KEY = YOUR_SECRET_KEY_FOR_JWT
+EMAIL_USERNAME = YOUR_EMAIL 
+EMAIL_PASSWORD = YOUR_PASSWORD
 ```
 
 ### Start Development Server
 ```
-$ npm run serve
+$ npm run dev
 ```
 ## Link Collection Postman
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/f7bb3ee225804360c26a)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3d20c27d5665c78c5037)
 
 ## API Endpoint
 ### Auth Endpoint
@@ -118,7 +111,7 @@ $ npm run serve
 | 7   | POST        | /api/flightroute/search           | Search flightroutes on admin    |
 
 ## About Project
-Ankasa is a project inspired by one of Unicorn in Indonesia. With Ankasa Ticketing, users can search a specific flights to another countries. The App also has a Find Ticket and Filter Features that allows users to select a country as an arrival destination and explore flight prices to various regions.
+This App for manage invoice
 
 ## Contributing
 
@@ -131,39 +124,11 @@ Fork the Project
 4. Open a Pull Request
 
 ## Related Project
-* [`Frontend Ankasa`](https://github.com/ArbiNMaki/Ankasa-Frontend)
+* [`Frontend Invoice`](https://github.com/ArbiNMaki/Invoice-frontend)
 
-## Contributors
-<center>
-  <table>
-    <tr>
-      <td align="center">
-        <a href="https://github.com/defri-ansyah">
-          <img width="150" src="https://avatars1.githubusercontent.com/u/73015398?s=400&u=72939e4bacd74f0ad4de21d2c8e1a0bfe8f3b059&v=4" alt="Defri Ansyah"><br/>
-          <b>Defri Ansyah</b>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/Gefyaqiilah">
-          <img width="150" src="https://avatars.githubusercontent.com/u/54069791?s=400&u=d52c9220de7f217fab6be5eed1a2f237325ef741&v=4" alt="Gefy Aqiilah Aqshal"><br/>
-          <b>Gefy Aqiilah Aqshal</b>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/ArbiNMaki">
-          <img width="150" src="https://avatars.githubusercontent.com/u/26770607?s=400&u=2af4fbf7c775908919e7f8d0454e95eafee3739f&v=4" alt="Arbi Dwi WIjaya"><br/>
-          <b>Arbi Dwi WIjaya</b>
-        </a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/safiratrisa">
-          <img width="150" src="https://avatars1.githubusercontent.com/u/41407774?s=400&v=4" alt="Trisa Safira Hasanah"><br/>
-          <b>Trisa Safira Hasanah</b>
-        </a>
-      </td>
-    </tr>
-  </table>
-</center>
+## Contact
+- Email - defriansyah013@gmail.com
+- LinkedIn - [Defri Ansyah](https://linkedin.com/in/defri-ansyah/)
 
 ---
 Copyright © 2021 [Defri Ansyah](https://github.com/defri-ansyah)
